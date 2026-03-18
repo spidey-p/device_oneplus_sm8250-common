@@ -91,6 +91,10 @@ PRODUCT_COPY_FILES += \
 # Board API level
 BOARD_SHIPPING_API_LEVEL := 30
 
+# Powerhint
+PRODUCT_COPY_FILES += \
+    device/oneplus/sm8250-common/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
