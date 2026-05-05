@@ -91,6 +91,10 @@ PRODUCT_COPY_FILES += \
 # Board API level
 BOARD_SHIPPING_API_LEVEL := 30
 
+# Powerhint
+PRODUCT_COPY_FILES += \
+    device/oneplus/sm8250-common/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
@@ -388,9 +392,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
-
-# V4A
-$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
 # VNDK
 PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
