@@ -3,7 +3,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/wlan/qcwcn
+    
 COMMON_PATH := device/oneplus/sm8250-common
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -139,6 +141,10 @@ ENABLE_VENDOR_RIL_SERVICE := true
 VENDOR_SECURITY_PATCH := 2024-10-05
 
 # SEPolicy
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    device/oneplus/sm8250-common/sepolicy/vendor
+
+include device/lineage/sepolicy/common/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
